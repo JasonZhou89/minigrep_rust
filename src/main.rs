@@ -1,11 +1,13 @@
 use minigrep::Config;
 use std::env;
 use std::process;
+// mod closures;
 fn main() {
     //命令行参数获取
     let args: Vec<String> = env::args().collect();
     // let query = &args[1];
     // let filename = &args[2];
+    
     // let (query,filename) = parse_config(&args);
 
     let config = Config::new(&args).unwrap_or_else(|err| {
@@ -20,6 +22,7 @@ fn main() {
         eprintln!("Application error:{}", e);
         process::exit(1);
     }
+    // closures::generate_workout(1, 1);
 }
 
 // fn parse_config(args:&[String])->(&str,&str){
